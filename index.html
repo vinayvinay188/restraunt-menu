@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Restaurant Menu</title>
+</head>
+<body>
+    <header>
+        <h1>Indian Cuisine Menu</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#owner" id="owner-link">Owner Section</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="menu">
+            <h2>Our Dishes</h2>
+            <div id="menu-items"></div>
+        </section>
+
+        <section id="owner" style="display: none;">
+            <h2>Owner Section</h2>
+            <form id="menu-form">
+                <input type="text" id="dish-name" placeholder="Dish Name" required>
+                <input type="text" id="dish-price" placeholder="Price" required>
+                <input type="url" id="dish-image" placeholder="Image URL" required>
+                <button type="submit">Add Dish</button>
+            </form>
+        </section>
+    </main>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Enter your email">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button type="submit">Login</button>
+</form>
+
+<div id="ownerSection" style="display:none;">
+    <!-- Owner-only features like add, edit, and delete menu items go here -->
+    <button id="addDishBtn">Add Dish</button>
+    <!-- More owner-only options... -->
+</div>
+
+
+    <script src="script.js">
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script> <!-- or firebase-database.js for Realtime DB -->
+</script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

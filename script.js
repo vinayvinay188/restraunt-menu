@@ -1,3 +1,7 @@
+const supabaseUrl = 'https://YOUR_SUPABASE_URL';
+const supabaseKey = 'YOUR_SUPABASE_ANON_KEY';
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
 // Simulated owner password for simplicity
 const ownerPassword = "admin123";
 

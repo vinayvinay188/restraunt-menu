@@ -117,3 +117,45 @@ menuItemsDiv.addEventListener('click', (event) => {
 
 // Initialize menu on page load
 renderMenu();
+async function fetchMenuItems() {
+    const { data: menuItems, error } = await supabase
+        .from('menu_items')
+        .select('*');
+
+    if (error) {
+        console.error('Error fetching menu:', error);
+        return;
+    }
+
+    const menuDiv = document.getElementById('menu');
+    menuDiv.innerHTML = '';
+
+    menuItems.forEach(item => {
+        menuDiv.innerHTML += `
+            <div class="menu-item">
+                <h3>${item.name}</h3>
+                <img src="${item.photo_url}" alt="${item.name}" width="100">
+                <p>Price: $${item.price}</p>
+            </div>
+        `;
+    });
+}
+
+fetchMenuItems();
+async function addMenuItem(name, photoUrl, price) {
+    const { data, error } = await supabase
+        .from('menu_items')
+        .insert([
+            { name: name, photo_url: photoUrl, price: price }
+        ]);
+
+    if (error) {
+        console.error('Error adding menu item:', error);
+        return;
+    }
+
+    // Refresh the menu to show the newly added item
+    fetchMenuItems();
+}
+
+// Call addMenuItem with values from a form when the owner submits new items
